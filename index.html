@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <!-- Обязательный адаптивный тег для Bootstrap -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Подключение Bootstrap CSS через CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <title>Документация Clash Nab</title>
+    
+</head>
+<body>
+    <div class="position-relative">
+        <img src="assets/img/banner.jpg" class="img-fluid w-100" style="max-height: 80vh; object-fit: cover;">
+        <div class="position-absolute bottom-0 start-0 p-3 p-md-4">
+            <img src="assets/img/logo.png" class="mb-2" style="height: 40px;">
+            <h1 class="text-white fs-3 fs-md-2 fs-lg-1 fw-bold mb-1">
+                Добро пожаловать в документацию бота
+            </h1>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Боковая панель с навигацией -->
+            <aside class="col-lg-6 col-xl-2 border-end">
+                <div class="list-group list-group-flush sticky-top pt-3">
+                    <a href="#tag0" class="list-group-item list-group-item-action">О проекте</a>
+                    <a href="#tag1" class="list-group-item list-group-item-action">Добавить клан</a>
+                    <a href="#tag2" class="list-group-item list-group-item-action">Добавить аккаунт</a>
+                    <a href="#tag3" class="list-group-item list-group-item-action">Прогноз рейд награды</a>
+                    <a href="#tag4" class="list-group-item list-group-item-action">Хранение рейд истории</a>
+                    <a href="#tag5" class="list-group-item list-group-item-action">Рассылка</a>
+                    <a href="#tag6" class="list-group-item list-group-item-action">Столичные рейтинги</a>
+                    <a href="#tag7" class="list-group-item list-group-item-action">Ссылки в боте</a>
+                </div>
+            </aside>
+
+            <!-- Основной контент -->
+            <main class="col-lg-9 col-xl-10 pt-3">
+                <div class="container">
+                    
+                    <h5 id="tag0" style="cursor: pointer;" onclick="copyLinkToClipboard(this)">📎 О проекте</h5>
+                    <p><strong>Clash Nab</strong> - Сервис, который предоставляет статистику по игре <br>Clash of Clans.</p>
+                    <p>Основная специализация это рейды:</p>
+                    <ul>
+                        <li>Прогноз награды</li>
+                        <li>Рейтинги</li>
+                        <li>Хранение истории</li>
+                        <li>Рассылка</li>
+                        <li>Построение графиков</li>
+                        <li>Достижения</li>
+                    </ul>
+                    
+                    <div class="note-box">
+                        <p><strong>Также бот может быть полезен для лиги:</strong> он умеет показывать список группы лиги и прогнозировать награду для кланов и их участников</p>
+                    </div>
+                    <div class="note-box warning">
+                        <p>This material is unofficial and is not endorsed by Supercell. For more information see Supercell's Fan Content Policy: www.supercell.com/fan-content-policy.</p>
+                    </div>
+                    <div class="text-center">                        
+                        <a href="https://t.me/ClashNab_bot" class="btn telegram-btn" role="button">
+                            Перейти к боту
+                        </a>
+                    </div> 
+
+                    <hr>
+                    
+                    <h5 id="tag1" style="cursor: pointer;" onclick="copyLinkToClipboard(this)">📎 Как добавить клан?</h5>
+                    <p>Используйте команду <kbd>/add_clan</kbd> удобным для вас способом.</p>
+                    
+                    <img src="assets/img/tutorial1.jpg" class="img-fluid">
+                    
+                    <div class="text-center">
+                        <p>пример</p>
+                    </div>                    
+                    
+                    <hr>
+                    <h5 id="tag2" style="cursor: pointer;" onclick="copyLinkToClipboard(this)">📎 Как добавить аккаунт?</h5>
+                    <p>Используйте команду <kbd>/add_account</kbd> в личном диалоге с ботом.</p>
+                    
+                    <img src="assets/img/tutorial2.jpg" class="img-fluid">
+                    
+                    <div class="text-center">
+                        <p>скриншот из игры</p>
+                    </div>
+                    
+                    <p><code></code></q>
+                                  
+                    <p><h6>Где найти игровой токен?</h6></p>
+                    <ol>
+                        <li>Открыть игру</li>
+                        <li>Открыть настройки</li>
+                        <li>Допонительные настройки</li>
+                        <li>Пролистать вниз</li>
+                        <li>Скопировать авторизационный токен</li>
+                    </ol>
+                    
+                    <p><h6>Безопасно делиться игровым токеном?</h6></p>
+                    <p>Это безопасно. Бот не получит доступ к вашему аккаунту</p>
+                    
+                    <hr>
+                    
+                    <h2 id="tag3" style="cursor: pointer;" onclick="copyLinkToClipboard(this)">📎 Как определяется рейд награда?</h2>
+                    
+                    <p><h6>Награда за нападение</p></h6>
+                    <p>За каждый разрушенный район клан получает медали.</p>      
+                    
+                    <table class="table table-bordered table-hover">
+                        <thead class="table-header">
+                            <tr>
+                                <th scope="col">Уровень</th>
+                                <th scope="col">Обычный район</th>
+                                <th scope="col">Пик</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>135</td>
+                                <td>-</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>225</td>
+                                <td>180</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>350</td>
+                                <td>360</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>405</td>
+                                <td>585</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>460</td>
+                                <td>810</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>-</td>
+                                <td>1115</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>-</td>
+                                <td>1240</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>-</td>
+                                <td>1260</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>-</td>
+                                <td>1375</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>10</td>
+
+                                <td>-</td>
+                                <td>1450</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="text-center">
+                        <p>Данные для примера</p>
+                    </div>
+                    
+                    <p>Всего атак: 278<br>
+                    Уничтожено районов врага: 102<br>
+                    Медали за разруш. районы: 56600</p>
+                    <ol>
+                        <li>Делим медали за разрушение на общее количество атак:
+                            <br>
+                            <strong>56600 ÷ 278 = 203,5971223021582</strong>
+                            
+                        </li>
+                        <br>
+                        <li>Округляем результат до большего целого числа:<br>
+                            <strong>203.5971223021582 > 204</strong>
+                            
+                        </li>
+                        <br>
+                        <li>Умножаем полученное число на максимальное количество атак:<br>
+                            <strong>204 * 6 = 1224</strong>
+                        </li>
+                    </ol>
+                    
+                    <div class="note-box">
+                        <p><strong>Подсказка:</strong> Медали за разруш.районы можно посмотреть через команду <kbd>/raid_stats</kbd> когда рейды активны</p>
+                    </div>
+                    <p><h6>Награда за оборону</p></h6>
+                    <p>Позже</p>
+                    
+                    <hr> 
+                    
+                    <h2 id="tag4" style="cursor: pointer;" onclick="copyLinkToClipboard(this)">📎 Хранение рейд истории</h2>
+                    <p>Позже</p>
+                    <hr>
+                    
+                    <h2 id="tag5 style="cursor: pointer;" onclick="copyLinkToClipboard(this)"">📎 Рейд рассылка</h2>
+                    <p>Позже</p>
+                    <hr>
+                    
+                    <h2 id="tag6" style="cursor: pointer;" onclick="copyLinkToClipboard(this)">📎 Какие есть рейтинги?</h2>
+                    <p>Позже</p>                   
+                    <hr>
+                    
+                    <h2 id="tag7" style="cursor: pointer;" onclick="copyLinkToClipboard(this)">📎 Ссылки в боте</h2>
+                    
+                    <p>Позже</p>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    
+
+    <!-- Подключение JavaScript Bootstrap (обязательно для некоторых компонентов) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+function copyLinkToClipboard(element) {
+    // Создаем ссылку с якорем
+    const link = window.location.origin + window.location.pathname + '#' + element.id;
+    
+    // Копируем в буфер обмена
+    navigator.clipboard.writeText(link)
+        .then(() => {
+            // Визуальная обратная связь
+            const originalText = element.textContent;
+            element.textContent = 'Ссылка скопирована!';
+            element.style.color = 'green';
+            
+            setTimeout(() => {
+                element.textContent = originalText;
+                element.style.color = '';
+            }, 1500);
+        })
+        .catch(err => {
+            console.error('Ошибка копирования: ', err);
+            alert('Не удалось скопировать ссылку');
+        });
+}
+</script>
+</body>
+</html>
