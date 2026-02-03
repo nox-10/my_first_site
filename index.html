@@ -213,7 +213,7 @@
                     <p>Позже</p>
                     <hr>
                     
-                    <h2 id="tag5 style="cursor: pointer;" onclick="copyLinkToClipboard(this)"">📎 Рейд рассылка</h2>
+                    <h2 id="tag5" style="cursor: pointer;" onclick="copyLinkToClipboard(this)>📎 Рейд рассылка</h2>
                     <p>Позже</p>
                     <hr>
                     
@@ -231,10 +231,23 @@
     </div>
     
 
-    <!-- Подключение JavaScript Bootstrap (обязательно для некоторых компонентов) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
+<!-- Подключение JavaScript Bootstrap (обязательно для некоторых компонентов) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+let isCopying = false; // Флаг для отслеживания состояния
+let copyTimeout = null; // Переменная для хранения таймера
+
 function copyLinkToClipboard(element) {
+    if (isCopying) {
+        return;
+    }
+    
+    // Устанавливаем флаг в true
+    isCopying = true;
+
+    const originalText = element.textContent;
+    const originalColor = element.style.color || '';
+    
     // Создаем ссылку с якорем
     const link = window.location.origin + window.location.pathname + '#' + element.id;
     
@@ -242,18 +255,25 @@ function copyLinkToClipboard(element) {
     navigator.clipboard.writeText(link)
         .then(() => {
             // Визуальная обратная связь
-            const originalText = element.textContent;
             element.textContent = 'Ссылка скопирована!';
             element.style.color = 'green';
             
-            setTimeout(() => {
+            if (copyTimeout) {
+                clearTimeout(copyTimeout);
+            }
+            
+            // Устанавливаем новый таймер
+            copyTimeout = setTimeout(() => {
                 element.textContent = originalText;
-                element.style.color = '';
+                element.style.color = originalColor;
+                isCopying = false; // Сбрасываем флаг
             }, 1500);
         })
         .catch(err => {
             console.error('Ошибка копирования: ', err);
             alert('Не удалось скопировать ссылку');
+            // В случае ошибки тоже сбрасываем флаг
+            isCopying = false;
         });
 }
 </script>
