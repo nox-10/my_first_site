@@ -64,3 +64,12 @@ h1 {
     border-color: #0077b3;
     color: white;
 }
+
+.description-img {
+  color: gray;
+}
+
+.test-border {
+  border: solid 23px orange;
+  padding: 30px
+}
